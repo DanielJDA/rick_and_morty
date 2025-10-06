@@ -1,34 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rick & Morty Explorer 🛸
 
-## Getting Started
+Aplicación desarrollada con **Next.js + TailwindCSS** para explorar personajes de la API pública de Rick and Morty.  
+Incluye buscador, filtros, paginación, favoritos persistentes y una interfaz moderna optimizada para portafolio.
 
-First, run the development server:
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://rick-and-morty-iota-sandy.vercel.app/)
+
+---
+
+## ✨ Características
+
+- 🔍 **Buscador** por nombre y filtro por estado (Alive / Dead / Unknown)  
+- 📄 **Paginación completa** con botones Prev / Next  
+- ❤️ **Sistema de favoritos** persistente en `localStorage`  
+- 🧩 Página dedicada `/favorites` con opción de eliminar todos  
+- 📱 **Diseño responsive**, limpio y moderno con Tailwind  
+- 💾 Datos obtenidos desde [The Rick and Morty API](https://rickandmortyapi.com)
+
+---
+
+## 🚀 Demo
+
+🔗 **Producción:** [rick-and-morty-iota-sandy.vercel.app](https://rick-and-morty-iota-sandy.vercel.app/)
+
+---
+
+## 🛠️ Stack Técnico
+
+- [Next.js](https://nextjs.org/) — Framework React con renderizado híbrido SSR/CSR  
+- [TailwindCSS](https://tailwindcss.com/) — Estilos rápidos y responsivos  
+- [TypeScript](https://www.typescriptlang.org/) — Tipado seguro  
+- [Vercel](https://vercel.com/) — Deploy continuo con previews automáticos  
+
+---
+
+## 📂 Estructura del proyecto
+
+rick_and_morty/
+├─ components/
+│ ├─ CharacterCard.tsx
+│ ├─ Filters.tsx
+│ ├─ FavoritesContext.tsx
+│ ├─ HeaderBar.tsx
+│ └─ Pagination.tsx
+├─ lib/
+│ └─ api.ts
+├─ pages/
+│ ├─ _app.tsx
+│ ├─ index.tsx
+│ ├─ favorites.tsx
+│ └─ character/
+│ └─ [id].tsx
+├─ public/
+├─ styles/
+│ └─ globals.css
+├─ package.json
+├─ tsconfig.json
+├─ tailwind.config.js
+├─ postcss.config.js
+└─ yarn.lock
+
+
+---
+
+## 🧠 Consideraciones Técnicas
+
+- Los favoritos se almacenan en `localStorage`, cargados mediante `useEffect` para evitar errores de SSR.  
+- El contador de “Me gusta” en el header se renderiza oculto hasta que el componente se monta (previene **hydration errors**).  
+- Alias configurado con `@` para imports limpios desde `tsconfig.json`.  
+
+---
+
+## 💻 Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-```
+yarn dev       # Ejecutar en desarrollo
+yarn build     # Compilar para producción
+yarn start     # Levantar build local
+yarn lint      # (si configuraste ESLint)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧩 Roadmap Futuro
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+ Modo oscuro con toggle 🌙
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+ Skeleton de carga animado ⚡
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+ Tests con Vitest / React Testing Library
 
-## Learn More
+ Vista de episodios y locaciones
 
-To learn more about Next.js, take a look at the following resources:
+🧑‍💻 Autor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Desarrollado por Daniel JDA — @DanielJDA
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+📦 Proyecto creado con fines educativos y de portafolio.
