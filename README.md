@@ -6,7 +6,7 @@ The application focuses on building a clean UI architecture, reusable components
 
 ## Live Demo
 
-https://rick-and-morty-iota-sandy.vercel.app
+[https://rick-and-morty-iota-sandy.vercel.app](https://rick-and-morty-iota-inky.vercel.app/)
 
 ---
 
