@@ -1,95 +1,97 @@
-# Rick & Morty Explorer 🛸
+# Rick and Morty Explorer
 
-Aplicación desarrollada con **Next.js + TailwindCSS** para explorar personajes de la API pública de Rick and Morty.  
-Incluye buscador, filtros, paginación, favoritos persistentes y una interfaz moderna optimizada para portafolio.
+A modern frontend application built with **Next.js**, **TypeScript**, and **TailwindCSS** that allows users to explore characters from the Rick and Morty API.
 
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://rick-and-morty-iota-sandy.vercel.app/)
+The application focuses on building a clean UI architecture, reusable components, and a smooth user experience while interacting with a public API.
 
----
+## Live Demo
 
-## ✨ Características
-
-- 🔍 **Buscador** por nombre y filtro por estado (Alive / Dead / Unknown)  
-- 📄 **Paginación completa** con botones Prev / Next  
-- ❤️ **Sistema de favoritos** persistente en `localStorage`  
-- 🧩 Página dedicada `/favorites` con opción de eliminar todos  
-- 📱 **Diseño responsive**, limpio y moderno con Tailwind  
-- 💾 Datos obtenidos desde [The Rick and Morty API](https://rickandmortyapi.com)
+https://rick-and-morty-iota-sandy.vercel.app
 
 ---
 
-## 🚀 Demo
+# Features
 
-🔗 **Producción:** [rick-and-morty-iota-sandy.vercel.app](https://rick-and-morty-iota-sandy.vercel.app/)
-
----
-
-## 🛠️ Stack Técnico
-
-- [Next.js](https://nextjs.org/) — Framework React con renderizado híbrido SSR/CSR  
-- [TailwindCSS](https://tailwindcss.com/) — Estilos rápidos y responsivos  
-- [TypeScript](https://www.typescriptlang.org/) — Tipado seguro  
-- [Vercel](https://vercel.com/) — Deploy continuo con previews automáticos  
+• Character search by name
+• Status filtering (Alive / Dead / Unknown)
+• Pagination for browsing characters
+• Add or remove characters from favorites
+• Persist favorites using localStorage
+• Dedicated `/favorites` page
+• Fully responsive design
 
 ---
 
-## 📂 Estructura del proyecto
+# Tech Stack
 
-rick_and_morty/
-├─ components/
-│ ├─ CharacterCard.tsx
-│ ├─ Filters.tsx
-│ ├─ FavoritesContext.tsx
-│ ├─ HeaderBar.tsx
-│ └─ Pagination.tsx
-├─ lib/
-│ └─ api.ts
-├─ pages/
-│ ├─ _app.tsx
-│ ├─ index.tsx
-│ ├─ favorites.tsx
-│ └─ character/
-│ └─ [id].tsx
-├─ public/
-├─ styles/
-│ └─ globals.css
-├─ package.json
-├─ tsconfig.json
-├─ tailwind.config.js
-├─ postcss.config.js
-└─ yarn.lock
+Frontend
+Next.js
+TypeScript
+TailwindCSS
 
+Deployment
+Vercel
+
+Data Source
+Rick and Morty API
 
 ---
 
-## 🧠 Consideraciones Técnicas
+# Project Structure
 
-- Los favoritos se almacenan en `localStorage`, cargados mediante `useEffect` para evitar errores de SSR.  
-- El contador de “Me gusta” en el header se renderiza oculto hasta que el componente se monta (previene **hydration errors**).  
-- Alias configurado con `@` para imports limpios desde `tsconfig.json`.  
+```
+components/
+lib/
+pages/
+public/
+styles/
+```
+
+components → reusable UI components
+lib → helper functions and utilities
+pages → application routes
+styles → global styles and Tailwind configuration
 
 ---
 
-## 💻 Scripts
+# Engineering Decisions
 
-```bash
-yarn dev       # Ejecutar en desarrollo
-yarn build     # Compilar para producción
-yarn start     # Levantar build local
-yarn lint      # (si configuraste ESLint)
+Favorites persistence
+Favorites are stored in **localStorage** so the user selections remain after refreshing the page.
 
-🧩 Roadmap Futuro
+SSR & hydration handling
+Since localStorage is only available in the browser, favorites are initialized using `useEffect` to avoid SSR hydration issues.
 
- Modo oscuro con toggle 🌙
+Clean import paths
+Path aliases were configured to simplify imports and keep the project maintainable.
 
- Skeleton de carga animado ⚡
+---
 
- Tests con Vitest / React Testing Library
+# Why This Project
 
- Vista de episodios y locaciones
+The goal of this project was to practice building a **clean and scalable frontend application** using modern tools such as Next.js, TypeScript and TailwindCSS.
 
-🧑‍💻 Autor
+The focus was placed on:
 
-Desarrollado por Daniel JDA — @DanielJDA
+• reusable component architecture
+• responsive UI
+• clean state management
+• user experience
 
-📦 Proyecto creado con fines educativos y de portafolio.
+---
+
+# Future Improvements
+
+Add loading skeletons
+Add unit tests for core components
+Persist filters in URL parameters
+Add episode and location pages
+Add dark mode support
+
+---
+
+# Author
+
+Daniel JDA
+
+Frontend Developer
